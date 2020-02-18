@@ -19,8 +19,8 @@ from torchvision import transforms
 from torch.autograd import Variable
 from matplotlib import pyplot as plt
 
-from google.colab import drive
-drive.mount('/content/gdrive')
+# from google.colab import drive
+# drive.mount('/content/gdrive')
 
 """Load Fashion Mnist Dataset"""
 
@@ -90,11 +90,11 @@ def train_MLP(num_epocs):
         test_correct +=(pred[1] == target).sum().item()
         test_total=test_total+target.size(0)
     test_acc=test_correct/test_total
-    if test_acc > max:
-      max=test_acc
-      model_save_name = "nn_"+str(test_acc)+".pkl"
-      path = F"/content/gdrive/My Drive/model/{model_save_name}" 
-      torch.save(model, path)
+    # if test_acc > max:
+    #   max=test_acc
+    #   model_save_name = "nn_"+str(test_acc)+".pkl"
+    #   path = F"/content/gdrive/My Drive/model/{model_save_name}"
+    #   torch.save(model, path)
     print("Train Loss :"+str((avg_loss/count).data)+", Train Accuracy :"+str(train_acc)+", Test Accuracy :"+str(test_acc))
   return loss_list
 
