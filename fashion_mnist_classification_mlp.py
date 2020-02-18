@@ -103,6 +103,6 @@ plt.figure()
 plt.plot(loss_list)
 plt.title("training-loss-MLP")
 plot_name="training_loss_mlp_"+str(datetime.datetime.now())+".jpg"
-plot_path = F"/content/gdrive/My Drive/plot/{plot_name}" 
-plt.savefig(plot_path)
+# plot_path = F"/content/gdrive/My Drive/plot/{plot_name}"
+# plt.savefig(plot_path)
 plt.show()
