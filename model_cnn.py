@@ -45,7 +45,7 @@ class CNN(nn.Module):
 
 
 def train_CNN(num_epocs):
-    device = torch.device("cuda:0")
+    device = torch.device("cpu")
     model = CNN(10).to(device)
     loss_list = []
     optimizer = optim.Adam(model.parameters())  # , lr=0.001
