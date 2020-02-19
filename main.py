@@ -28,8 +28,8 @@ testloader = torch.utils.data.DataLoader(test_dataset, batch_size=4, shuffle = T
 
 # nnpath = F"/content/gdrive/My Drive/model/nn.pkl"
 # cnnpath = F"/content/gdrive/My Drive/model/cnn.pkl"
-nnpath = "./model/nn.pkl"
-cnnpath = "./model/cnn.pkl"
+nnpath = "model/nn.pkl"
+cnnpath = "model/cnn.pkl"
 
 class MLP(nn.Module):
   def __init__(self, n_classes=10):
