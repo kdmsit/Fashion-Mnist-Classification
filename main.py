@@ -142,6 +142,8 @@ for batch_idx, (img, target) in enumerate(testloader):
 print("Confusion Matrix For MLP")
 confusion_matrix_mlp=confusion_matrix(y_gt,y_pred_label)
 print(confusion_matrix_mlp)
+print("\n")
+print("\n")
 # fig = plt.figure()
 # plt.matshow(confusion_matrix_mlp)
 # plt.title('Confusion Matrix For MLP')
