@@ -17,6 +17,7 @@ import torch.optim as optim
 import torch.nn.functional as F
 from torchvision import transforms
 from torch.autograd import Variable
+from sklearn.metrics import confusion_matrix
 from matplotlib import pyplot as plt
 
 # from google.colab import drive
@@ -28,6 +29,7 @@ testloader = torch.utils.data.DataLoader(test_dataset, batch_size=4, shuffle = T
 
 # nnpath = F"/content/gdrive/My Drive/model/nn.pkl"
 # cnnpath = F"/content/gdrive/My Drive/model/cnn.pkl"
+from sklearn.metrics import confusion_matrix
 nnpath = "models/nn.pkl"
 cnnpath = "models/cnn.pkl"
 
@@ -92,6 +94,9 @@ for batch_idx, (img, target) in enumerate(testloader):
   y_pred_label += list(y_pred_label_tmp.numpy())
   count=count+1
 
+print("Confusion Matrix For CNN")
+print(confusion_matrix(target, y_pred))
+
 with open("convolution-neural-net.txt", 'w') as f:
   f.write("Loss on Test Data : {}\n".format(avg_loss/count))
   f.write("Accuracy on Test Data : {}\n".format(np.mean(np.array(y_gt) == np.array(y_pred_label))))
@@ -123,6 +128,9 @@ for batch_idx, (img, target) in enumerate(testloader):
   y_gt += list(target.numpy())
   y_pred_label += list(y_pred_label_tmp.numpy())
   count=count+1
+
+print("Confusion Matrix For MLP")
+print(confusion_matrix(target, y_pred))
 
 with open("multi-layer-net.txt", 'w') as f:
   f.write("Loss on Test Data : {}\n".format(avg_loss/count))
