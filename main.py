@@ -95,7 +95,8 @@ for batch_idx, (img, target) in enumerate(testloader):
   count=count+1
 
 print("Confusion Matrix For CNN")
-print(confusion_matrix(target, y_pred))
+confusion_matrix_cnn=confusion_matrix(target,y_pred)
+print(confusion_matrix_cnn)
 
 with open("convolution-neural-net.txt", 'w') as f:
   f.write("Loss on Test Data : {}\n".format(avg_loss/count))
@@ -130,7 +131,8 @@ for batch_idx, (img, target) in enumerate(testloader):
   count=count+1
 
 print("Confusion Matrix For MLP")
-print(confusion_matrix(target, y_pred))
+confusion_matrix_mlp=confusion_matrix(target,y_pred)
+print(confusion_matrix_mlp)
 
 with open("multi-layer-net.txt", 'w') as f:
   f.write("Loss on Test Data : {}\n".format(avg_loss/count))
